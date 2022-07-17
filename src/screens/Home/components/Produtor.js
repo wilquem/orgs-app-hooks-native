@@ -6,7 +6,7 @@ export default function Produtor({nome, imagem, distancia, estrelas}) {
 
     const [selecionado, setSelecionado] = useState(false);
   return (
-    <TouchableOpacity  onPress={() => setSelecionado(!selecionado)} style={styles.cartao}>
+    <TouchableOpacity onPress={() => setSelecionado(!selecionado)} style={styles.cartao}>
       <Image style={styles.imagem} source={imagem} accessibilityLabel={nome} />
       <View style={styles.info}>
         <View>
