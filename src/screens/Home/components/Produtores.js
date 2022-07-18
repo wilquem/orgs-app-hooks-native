@@ -1,18 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import { View, Text, FlatList, StyleSheet } from 'react-native'
-import { carregaProdutores } from '../../../services/carregaDados'
+import React from 'react'
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
 import Produtor from './Produtor';
+import useProdutores from '../../../hooks/useProdutores';
 
 export default function Produtores({topo: Topo}) {
-  const [titulo,setTitulo] = useState('');
-  const [lista,setLista] = useState([]);
-
-
-  useEffect(()=> {
-    const retorno = carregaProdutores()
-    setTitulo(retorno.titulo);
-    setLista(retorno.lista);
-  },[])
+  const [titulo,lista, ordenarEstrela, ordenarDistancia] = useProdutores()
 
   const topoLista = () => {
     return (
