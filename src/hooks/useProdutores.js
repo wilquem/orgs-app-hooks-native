@@ -8,11 +8,11 @@ export default function useProdutores() {
 
   useEffect(()=> {
     const retorno = carregaProdutores()
-    console.log(retorno)
-    retorno.lista.sort((produtor1,produtor2) => produtor1.distancia - produtor2.distancia)
+
     setTitulo(retorno.titulo);
     setLista(retorno.lista);
-  },[])
+
+  },[lista,titulo])
 
     return [titulo,lista]
 }
